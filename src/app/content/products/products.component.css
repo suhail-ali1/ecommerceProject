@@ -1,0 +1,11 @@
+.grid-container {
+    display: flex;
+  flex-direction: row;
+   gap: 50px;
+   padding: 100px;
+  }
+  
+  .grid-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+  }
