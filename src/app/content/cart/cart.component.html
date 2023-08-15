@@ -1,0 +1,17 @@
+<div style="display: flex;  justify-content: space-around; " >
+
+    <div  *ngFor = "let p of products"  class="grid-item" style="width: 250px; ">
+        <img src= {{p.image}} style="width: 12opx; height: 90px;" class="card-img-top" alt="...">
+        
+        <div class="card-body">
+            <h5 class="card-title">{{p.title}}</h5>
+            <p class="card-text">{{p.description}}</p>
+            <button class="btn btn-primary" (click)="addtocart(p)">Add to Cart</button> 
+          
+        
+        </div>
+       
+      </div>
+
+</div>
+

@@ -1,4 +1,4 @@
-<div class="grid-container" >
+<div style="display: flex;  justify-content: space-around; " >
 
     <div  *ngFor = "let p of products"  class="grid-item" style="width: 250px; ">
         <img src= {{p.image}} style="width: 12opx; height: 90px;" class="card-img-top" alt="...">
@@ -6,12 +6,27 @@
         <div class="card-body">
             <h5 class="card-title">{{p.title}}</h5>
             <p class="card-text">{{p.description}}</p>
-            <a href="#" class="btn btn-primary"  >Add to Cart</a>
-          
-        
-        </div>
-       
+            <button class="btn btn-primary" (click)="addtocart(p)">Add to Cart</button> 
+            <button class="btn btn-secondary" (click)="openUpdateWindow(p)">Update</button>
+        </div>       
       </div>
-
 </div>
+
+<div class="update-window" *ngIf="isUpdateWindowOpen">
+  <h3>Update Product</h3>
+  <input [(ngModel)]= "title" class="form-control" placeholder="Product Name" />
+  <input [(ngModel)]= "desc" class="form-control" placeholder="Product description" />
+  <input [(ngModel)]= "price" class="form-control" placeholder="Product Price" />
+  <button class="btn btn-primary" (click)="updateProduct()">Save Changes</button>
+</div>
+
+
+
+
+
+
+
+
+
+
 
